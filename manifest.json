@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "TubeNotes AI",
+  "version": "1.0.0",
+  "description": "Turn YouTube videos into structured notes, summaries, and study guides.",
+  "permissions": ["activeTab", "tabs"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "action": {
+    "default_title": "TubeNotes AI",
+    "default_popup": "popup.html"
+  }
+}

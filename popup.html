@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubeNotes AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">▶</div>
+        <div>
+          <h1>TubeNotes <span>AI</span></h1>
+          <p class="tagline">Learn more from every video</p>
+        </div>
+      </div>
+      <div class="status-dot" title="Extension ready"><span></span> Ready</div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">YOUR VIDEO, YOUR WAY</div>
+      <h2>Turn videos into<br><span>knowledge.</span></h2>
+      <p>Choose a format and create notes you’ll actually want to revisit.</p>
+    </section>
+
+    <section class="video-card" aria-live="polite">
+      <div class="video-icon">▣</div>
+      <div class="video-details">
+        <div class="field-label">CURRENT YOUTUBE VIDEO</div>
+        <div id="videoTitle" class="video-title">Detecting current tab…</div>
+        <div id="videoId" class="video-id">Video ID: —</div>
+      </div>
+      <button id="refreshBtn" class="icon-button" title="Refresh current video" aria-label="Refresh current video">↻</button>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading">
+        <h3>What would you like?</h3>
+        <span>STEP 1 OF 2</span>
+      </div>
+      <div class="options-grid" role="group" aria-label="Choose note format">
+        <button class="option-card selected" data-type="summary">
+          <span class="option-icon purple">✦</span>
+          <span class="option-title">Quick summary</span>
+          <span class="option-desc">Key ideas at a glance</span>
+          <span class="radio"></span>
+        </button>
+        <button class="option-card" data-type="study">
+          <span class="option-icon blue">▤</span>
+          <span class="option-title">Study notes</span>
+          <span class="option-desc">Organized topic notes</span>
+          <span class="radio"></span>
+        </button>
+        <button class="option-card" data-type="detailed">
+          <span class="option-icon orange">☷</span>
+          <span class="option-title">Detailed notes</span>
+          <span class="option-desc">More context and detail</span>
+          <span class="radio"></span>
+        </button>
+        <button class="option-card" data-type="flashcards">
+          <span class="option-icon green">▣</span>
+          <span class="option-title">Flashcards</span>
+          <span class="option-desc">Questions and answers</span>
+          <span class="radio"></span>
+        </button>
+        <button class="option-card" data-type="action">
+          <span class="option-icon pink">↗</span>
+          <span class="option-title">Action points</span>
+          <span class="option-desc">Steps you can apply</span>
+          <span class="radio"></span>
+        </button>
+        <button class="option-card" data-type="transcript">
+          <span class="option-icon teal">≡</span>
+          <span class="option-title">Chapter outline</span>
+          <span class="option-desc">Topics in a clear order</span>
+          <span class="radio"></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section-block preferences">
+      <div class="section-heading">
+        <h3>Customize notes</h3>
+        <span>OPTIONAL</span>
+      </div>
+      <label class="input-label" for="language">Output language</label>
+      <select id="language">
+        <option value="English">English</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Hinglish">Hinglish (Roman Hindi)</option>
+      </select>
+      <label class="input-label" for="detailLevel">Detail level</label>
+      <div class="segmented" id="detailLevel" role="group" aria-label="Detail level">
+        <button data-detail="concise">Concise</button>
+        <button class="active" data-detail="balanced">Balanced</button>
+        <button data-detail="thorough">Thorough</button>
+      </div>
+      <label class="input-label" for="extraInstructions">Anything specific? <span>(optional)</span></label>
+      <textarea id="extraInstructions" rows="2" placeholder="e.g. Explain technical terms with examples…"></textarea>
+    </section>
+
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+    <button id="generateBtn" class="primary-button">
+      <span>Generate my notes</span><span class="button-arrow">→</span>
+    </button>
+    <p class="footer-note">Your notes will be prepared by your connected API.</p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
